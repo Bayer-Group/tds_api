@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "tds.wc.app";
+
+package probe;
+
+// The probe service definition.
+service Probe 
+{
+	// Sends a probe
+	rpc SendProbe (ProbeRequest) returns (ProbeReply);
+}
+
+// The request message.
+message ProbeRequest 
+{
+	string clientName = 1;
+	string message = 2;
+}
+
+// The response message.
+message ProbeReply 
+{
+	string serviceName = 1;
+	string message = 2;
+}
